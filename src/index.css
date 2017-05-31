@@ -17,6 +17,10 @@ ol, ul {
   margin-bottom: 10px;
 }
 
+.title-text {
+  text-align: center;
+}
+
 .square {
   background: #fff;
   border: 1px solid #999;
@@ -43,6 +47,8 @@ ol, ul {
 .game {
   display: flex;
   flex-direction: row;
+  width: 250px;
+  margin-left: 35%;
 }
 
 .game-info {
