@@ -5,6 +5,10 @@ body {
   background-color: #000;
 }
 
+a {
+  color: #fff;
+}
+
 ol, ul {
   padding-left: 30px;
 }
