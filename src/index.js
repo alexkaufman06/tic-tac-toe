@@ -15,7 +15,7 @@ class Board extends React.Component {
     return (
       <Square 
         value={this.props.squares[i]} 
-        onClick={() => this.props.onClick(i)} 
+        onClick={() => this.props.onClick(i)}
         />
     );
   }
@@ -105,6 +105,13 @@ class Game extends React.Component {
       status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
     }
 
+    let test;
+    if (winner) {
+      test = "hide";
+    } else {
+      test = "game-info";
+    }
+
     return (
       <div className="game">
         <div className="game-board">
@@ -117,7 +124,7 @@ class Game extends React.Component {
             onClick={(i) => this.handleClick(i)}
           />
         </div>
-        <div className="game-info">
+        <div className={test}>
           <ol>{moves}</ol>
         </div>
       </div>
@@ -146,7 +153,7 @@ function calculateWinner(squares) {
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return squares[a]
+      return squares[a];
     }
   }
   return null;
