@@ -108,30 +108,47 @@ class Game extends React.Component {
       status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
     }
 
-    let test;
+    let hideWinner;
     if (winner) {
-      test = "hide";
+      hideWinner = "hide";
     } else {
-      test = "game-info";
+      hideWinner = "game-info";
     }
 
     return (
-      <div className="game">
-        <div className="game-board">
-          <div>
-            <h1 className="title-text">Tic-Toc-Toe</h1>
-            <div className="status">{status}</div>
-          </div>
-          <Board
-            squares={current.squares}
-            onClick={(i) => this.handleClick(i)}
-          />
-          <div className={test}>
-            <ol>{moves}</ol>
+      <div className="container">
+        <div className="row">
+          <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div className="text-center">
+              <h1>Tic-Toc-Toe</h1>
+              <div className="status">{status}</div>
+            </div>
           </div>
         </div>
-        <div className={test}>
-          <ol>{moves}</ol>
+        <div className="row">
+          <div className="hidden-xs hidden-sm col-md-3 col-lg-2 col-lg-offset-1">
+            <div className={hideWinner}>
+              <ol>{moves}</ol>
+            </div>
+          </div>
+          <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-lg-offset-2">
+            <Board
+              squares={current.squares}
+              onClick={(i) => this.handleClick(i)}
+            />
+          </div>
+          <div className="hidden-xs hidden-sm col-md-3 col-lg-3">
+            <div className={hideWinner}>
+              <ol>{moves}</ol>
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-xs-12 col-sm-12 hidden-md hidden-lg">
+            <div className={hideWinner}>
+              <ol>{moves}</ol>
+            </div>
+          </div>
         </div>
       </div>
     );

@@ -20,12 +20,7 @@ ol, ul {
 }
 
 .status {
-  margin-bottom: 10px;
-}
-
-.title-text {
-  text-align: center;
-  margin-left: -27px;
+  margin: 20px 0px 10px 0px;
 }
 
 .square {
@@ -66,13 +61,6 @@ ol, ul {
 
 .kbd-navigation .square:focus {
   background: #ddd;
-}
-
-.game {
-  display: flex;
-  flex-direction: row;
-  width: 250px;
-  margin-left: 35%;
 }
 
 .game-info {
